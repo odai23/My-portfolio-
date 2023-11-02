@@ -1,0 +1,249 @@
+* {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: "GFS Didot", serif;
+  box-sizing: border-box;
+}
+
+/* hearder */
+
+.header_countainer {
+  height: 16vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  position: fixed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 7rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  width: 140px;
+}
+.logo_img {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar ul {
+  padding-right: 3rem;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Add the underline style to the link */
+.navbar ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Add a pseudo-element for the underline and hide it initially */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #000000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Show the underline when the link is hovered over */
+.navbar ul li a:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* about me */
+.contact-me {
+  padding-top: 8rem;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* footer */
+
+.footer-container {
+  background-color: #ffffff;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 1rem auto;
+}
+.footer-links a {
+  display: inline;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 1rem auto;
+}
+
+.footer-container p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+@media (max-width: 669.999px) {
+  .header_countainer {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+  .logo_container {
+    padding-left: 1rem;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100vw;
+    padding-top: 50px;
+    position: absolute;
+    top: -1000px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    height: 30vh;
+    z-index: -1;
+    background: #ffffff;
+  }
+
+  .navbar.active {
+    background: #ffffff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 50vh;
+    font-size: 1.6rem;
+  }
+
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.5s ease-in-out;
+    background-color: #000000;
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar ul li {
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 1rem;
+  }
+  .navbar ul li a {
+    text-align: center;
+    width: 100%;
+    display: table;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* main */
+
+  /* Footer */
+
+  .footer-links a {
+    font-size: 0.6rem;
+  }
+}
