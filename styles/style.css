@@ -9,9 +9,9 @@
 .cover-img {
   background-image: url("../imgs/cover.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto;
   background-position: center;
   height: 100vh;
+  width: 100vh;
   display: flex;
   align-items: center;
   background-position: center;
