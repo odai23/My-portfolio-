@@ -7,7 +7,7 @@
 
 /* cover */
 .cover-img {
-  background-image: url(./imgs/cover.jpg);
+  background-image: url("../imgs/cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
