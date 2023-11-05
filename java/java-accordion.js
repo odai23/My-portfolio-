@@ -77,7 +77,7 @@ goButton.forEach((button, index) => {
 
     category = accordionImage[index].getAttribute("data-category"); // get category of the image
     let newImg = new Image();
-    newImg.src = `/imgs/${category}/${index + 1}.jpg`;
+    newImg.src = `./imgs/${category}/${index + 1}.jpg`;
     newImgWindow.appendChild(newImg);
     newImg.classList.add("popup-img");
     newImg.setAttribute("id", "current-img");
@@ -117,7 +117,7 @@ function changeImg(change) {
     }
   }
 
-  newImg.setAttribute("src", `/imgs/${category}/${calcNewImg}.jpg`);
+  newImg.setAttribute("src", `./imgs/${category}/${calcNewImg}.jpg`);
   newImg.setAttribute("class", "popup-img");
   newImg.setAttribute("id", "current-img");
 
