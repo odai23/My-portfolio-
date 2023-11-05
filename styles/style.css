@@ -10,6 +10,7 @@
   background-image: url("../imgs/cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -379,6 +380,8 @@
 
 @media (max-width: 769px) {
   .cover-img h1 {
+    background-size: cover;
+    background-position: center;
     font-size: 1.5rem;
     padding-left: 4rem;
   }
