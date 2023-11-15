@@ -13,7 +13,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+    </script>
   </head>
   <header class="header_countainer">
     <div class="logo_container">
@@ -47,7 +48,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" required  placeholder="Type in your message"></textarea>
     
-            <input type="submit" value="Send" />
+            <input type="submit" value="Send" onCLick="sendEmail()"/>
           </form>
     </main>
 
@@ -61,29 +62,28 @@
         </div>
         <p class="copy">All Rights Reserved &copy Odai Merheg</p>
       </footer>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
-      </script>
+      
       <script type="text/javascript">
-        (function() {
+        function sendEmail() {
           emailjs.init("IVFnw9JaHeUKZnE5z"); 
-        })();
-        let name = document.querySelector("#name").value;
-        let email = document.querySelector("#email").value;
-        let phone = document.querySelector("#phone").value;
-        let message = document.querySelector("#message").value;
+          let name = document.querySelector("#name").value;
+          let email = document.querySelector("#email").value;
+          let phone = document.querySelector("#phone").value;
+          let message = document.querySelector("#message").value;
         
-        var templateParams = {
-          name: name,
-          email: email,
-          phone: phone,
-          message: message
-        };
-        emailjs.send('service_u47qw5w', 'template_jblkbxd', templateParams)
-          .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-          }, function(error) {
-            console.log('FAILED...', error);
-          });
+          var templateParams = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+          };
+          emailjs.send('service_u47qw5w', 'template_jblkbxd', templateParams)
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+              console.log('FAILED...', error);
+            });
+          };
       </script>
   </body>
 </html>
